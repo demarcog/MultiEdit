@@ -1,0 +1,23 @@
+0.4 
+Fixed strange behaviour in functions after plugin unloading and reloading
+*Added About/help first version
+
+0.3
+Fixed select features function
+Update comboboxes after saving
+Update related comboboxes on combobox item change
+
+0.2.1
+Fixed bug in create new field feature
+
+0.2
+Fixed minor bugs and issues of version 0.1: 
+Qlinedit instead Qplaintext,cleaning of older code snippets
+*added function to add new fields to write values to!
+
+
+0.1
+First release
+
+....
+no earlier entries

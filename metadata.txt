@@ -1,0 +1,24 @@
+# This file contains metadata for your plugin. Beginning
+# with version 1.8 this is the preferred way to supply information about a
+# plugin. The current method of embedding metadata in __init__.py will
+# be supported until version 2.0
+
+# This file should be included when you package your plugin.
+
+[general]
+name=MultiEdit
+description=MultiEdit chooses an attribute value from a vector layer and selecting the matching features, changes all the corresponding to a new value: useful if you have many features to modify.This plugin lets you write the new value in any existing field in the attribute table, for the selected features or newly created from plugin gui...
+version=0.5
+qgisMinimumVersion=2.0
+class_name=MultiEdit
+homepage=http://www.pienocampo.it/pyqgis/plugins.xml
+tracker=https://docs.google.com/spreadsheet/viewform?formkey=dFhDMGZzdGZkQzdveTI3YkI1V1BfYmc6MQ
+repository=http://www.pienocampo.it/pyqgis/plugins.xml
+icon=multiedit.png
+
+; experimental flag
+experimental=True
+
+[author]
+name=Giuseppe De Marco
+email=info@pienocampo.it
