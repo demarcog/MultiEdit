@@ -12,7 +12,7 @@ version=0.5
 qgisMinimumVersion=2.0
 class_name=MultiEdit
 homepage=http://www.pienocampo.it/pyqgis/plugins.xml
-tracker=https://hub.qgis.org/projects/demarcog1/issues
+tracker=https://docs.google.com/spreadsheet/viewform?formkey=dFhDMGZzdGZkQzdveTI3YkI1V1BfYmc6MQ
 repository=https://github.com/demarcog/MultiEdit.git
 icon=multiedit.png
 
