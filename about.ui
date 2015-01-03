@@ -30,7 +30,7 @@
     </font>
    </property>
    <property name="text">
-    <string>MultiEdit v 0.5</string>
+    <string>MultiEdit v 1.0</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -51,7 +51,7 @@
     </font>
    </property>
    <property name="text">
-    <string>(c) 2013 Giuseppe De Marco
+    <string>(c) 2015 Giuseppe De Marco
  Pienocampo
  www.pienocampo.it</string>
    </property>
@@ -65,7 +65,7 @@
      <x>20</x>
      <y>100</y>
      <width>761</width>
-     <height>141</height>
+     <height>151</height>
     </rect>
    </property>
    <property name="html">
@@ -73,12 +73,12 @@
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;MultiEdit v. 0.5 August 2013 release&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Major update for Qgis 1.9 master release and API changes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;MultiEdit v. 1.0 January 2015 release&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Major updates for Qgis 2.6 release and API changes. Added function to select all features and change values for all by the new Select all pushbutton. &lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;This plugins' new releases are currently ongoing.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tips and suggestions from anyone who uses it are always welcome!&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;For instruction and examples valid for version 0.4 and 0.5 you can visit http://www.pienocampo.it/pyqgis/multiedit_help.html or read below!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;For instruction and examples valid for version 0.4 and 0.5 you can visit http://www.pienocampo.it/pyqgis/multiedit_help.html.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">

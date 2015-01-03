@@ -2,8 +2,8 @@
 
 # Form implementation generated from reading ui file 'ui_multiedit.ui'
 #
-# Created: Mon Jul 22 18:25:49 2013
-#      by: PyQt4 UI code generator 4.10
+# Created: Sat Jan  3 10:43:12 2015
+#      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -65,10 +65,10 @@ class Ui_MultiEdit(object):
         self.label_5.setAlignment(QtCore.Qt.AlignCenter)
         self.label_5.setObjectName(_fromUtf8("label_5"))
         self.select = QtGui.QPushButton(MultiEdit)
-        self.select.setGeometry(QtCore.QRect(20, 249, 111, 41))
+        self.select.setGeometry(QtCore.QRect(20, 240, 111, 41))
         self.select.setObjectName(_fromUtf8("select"))
         self.unselect = QtGui.QPushButton(MultiEdit)
-        self.unselect.setGeometry(QtCore.QRect(140, 249, 121, 41))
+        self.unselect.setGeometry(QtCore.QRect(140, 240, 121, 41))
         self.unselect.setObjectName(_fromUtf8("unselect"))
         self.change_another = QtGui.QPushButton(MultiEdit)
         self.change_another.setGeometry(QtCore.QRect(440, 250, 171, 41))
@@ -80,7 +80,7 @@ class Ui_MultiEdit(object):
         self.label_6.setGeometry(QtCore.QRect(293, 59, 261, 17))
         self.label_6.setObjectName(_fromUtf8("label_6"))
         self.label_7 = QtGui.QLabel(MultiEdit)
-        self.label_7.setGeometry(QtCore.QRect(10, 343, 67, 20))
+        self.label_7.setGeometry(QtCore.QRect(10, 343, 81, 20))
         self.label_7.setObjectName(_fromUtf8("label_7"))
         self.Exit = QtGui.QPushButton(MultiEdit)
         self.Exit.setGeometry(QtCore.QRect(620, 310, 171, 41))
@@ -101,7 +101,7 @@ class Ui_MultiEdit(object):
         self.create_new_field.setGeometry(QtCore.QRect(650, 138, 141, 27))
         self.create_new_field.setObjectName(_fromUtf8("create_new_field"))
         self.line_6 = QtGui.QFrame(MultiEdit)
-        self.line_6.setGeometry(QtCore.QRect(3, 290, 791, 20))
+        self.line_6.setGeometry(QtCore.QRect(283, 290, 511, 20))
         self.line_6.setFrameShadow(QtGui.QFrame.Sunken)
         self.line_6.setFrameShape(QtGui.QFrame.HLine)
         self.line_6.setFrameShadow(QtGui.QFrame.Sunken)
@@ -125,7 +125,7 @@ class Ui_MultiEdit(object):
         self.label_12.setScaledContents(True)
         self.label_12.setObjectName(_fromUtf8("label_12"))
         self.line_3 = QtGui.QFrame(MultiEdit)
-        self.line_3.setGeometry(QtCore.QRect(270, 60, 20, 241))
+        self.line_3.setGeometry(QtCore.QRect(270, 60, 20, 271))
         self.line_3.setFrameShape(QtGui.QFrame.VLine)
         self.line_3.setFrameShadow(QtGui.QFrame.Sunken)
         self.line_3.setObjectName(_fromUtf8("line_3"))
@@ -142,6 +142,15 @@ class Ui_MultiEdit(object):
         self.about = QtGui.QPushButton(MultiEdit)
         self.about.setGeometry(QtCore.QRect(610, 10, 171, 41))
         self.about.setObjectName(_fromUtf8("about"))
+        self.all = QtGui.QPushButton(MultiEdit)
+        self.all.setGeometry(QtCore.QRect(20, 290, 111, 21))
+        self.all.setObjectName(_fromUtf8("all"))
+        self.line_7 = QtGui.QFrame(MultiEdit)
+        self.line_7.setGeometry(QtCore.QRect(10, 320, 271, 20))
+        self.line_7.setFrameShadow(QtGui.QFrame.Sunken)
+        self.line_7.setFrameShape(QtGui.QFrame.HLine)
+        self.line_7.setFrameShadow(QtGui.QFrame.Sunken)
+        self.line_7.setObjectName(_fromUtf8("line_7"))
 
         self.retranslateUi(MultiEdit)
         QtCore.QObject.connect(self.Exit, QtCore.SIGNAL(_fromUtf8("clicked(bool)")), MultiEdit.reject)
@@ -153,8 +162,8 @@ class Ui_MultiEdit(object):
         self.label_2.setText(_translate("MultiEdit", "Field", None))
         self.label_3.setText(_translate("MultiEdit", "Old Attribute value", None))
         self.label_4.setText(_translate("MultiEdit", "New Attribute value", None))
-        self.label_5.setText(_translate("MultiEdit", "MultiEdit 0.5  \n"
-"(C) 2013 by Giuseppe De Marco\n"
+        self.label_5.setText(_translate("MultiEdit", "MultiEdit 1.0  \n"
+"(C) 2015 by Giuseppe De Marco\n"
 " www.pienocampo.it", None))
         self.select.setText(_translate("MultiEdit", "Select\n"
 "Features", None))
@@ -163,7 +172,7 @@ class Ui_MultiEdit(object):
         self.change_another.setText(_translate("MultiEdit", "Write value \n"
 " to chosen field", None))
         self.label_6.setText(_translate("MultiEdit", "Field to write the new value to:", None))
-        self.label_7.setText(_translate("MultiEdit", "Output", None))
+        self.label_7.setText(_translate("MultiEdit", "Messages", None))
         self.Exit.setText(_translate("MultiEdit", "Exit", None))
         self.save.setText(_translate("MultiEdit", "Save Changes", None))
         self.show_t.setText(_translate("MultiEdit", "Show Attribute Table \n"
@@ -172,8 +181,9 @@ class Ui_MultiEdit(object):
         self.fieldtype.setItemText(1, _translate("MultiEdit", "Int", None))
         self.fieldtype.setItemText(2, _translate("MultiEdit", "Double", None))
         self.create_new_field.setText(_translate("MultiEdit", "Create new Field", None))
-        self.label_8.setText(_translate("MultiEdit", "Create Field (Optional)", None))
+        self.label_8.setText(_translate("MultiEdit", "New Field Name", None))
         self.label_10.setText(_translate("MultiEdit", "Field type", None))
         self.about.setText(_translate("MultiEdit", "About/Help", None))
+        self.all.setText(_translate("MultiEdit", "Select All", None))
 
-#import resources_rc
+import resources_rc

@@ -136,8 +136,8 @@
     </rect>
    </property>
    <property name="text">
-    <string>MultiEdit 0.5  
-(C) 2013 by Giuseppe De Marco
+    <string>MultiEdit 1.0  
+(C) 2015 by Giuseppe De Marco
  www.pienocampo.it</string>
    </property>
    <property name="alignment">
@@ -148,7 +148,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>249</y>
+     <y>240</y>
      <width>111</width>
      <height>41</height>
     </rect>
@@ -162,7 +162,7 @@ Features</string>
    <property name="geometry">
     <rect>
      <x>140</x>
-     <y>249</y>
+     <y>240</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -214,12 +214,12 @@ Features</string>
     <rect>
      <x>10</x>
      <y>343</y>
-     <width>67</width>
+     <width>81</width>
      <height>20</height>
     </rect>
    </property>
    <property name="text">
-    <string>Output</string>
+    <string>Messages</string>
    </property>
   </widget>
   <widget class="QPushButton" name="Exit">
@@ -303,9 +303,9 @@ of selected Layer</string>
   <widget class="Line" name="line_6">
    <property name="geometry">
     <rect>
-     <x>3</x>
+     <x>283</x>
      <y>290</y>
-     <width>791</width>
+     <width>511</width>
      <height>20</height>
     </rect>
    </property>
@@ -326,7 +326,7 @@ of selected Layer</string>
     </rect>
    </property>
    <property name="text">
-    <string>Create Field (Optional)</string>
+    <string>New Field Name</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_10">
@@ -387,7 +387,7 @@ of selected Layer</string>
      <x>270</x>
      <y>60</y>
      <width>20</width>
-     <height>241</height>
+     <height>271</height>
     </rect>
    </property>
    <property name="orientation">
@@ -431,6 +431,35 @@ of selected Layer</string>
    </property>
    <property name="text">
     <string>About/Help</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="all">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>290</y>
+     <width>111</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Select All</string>
+   </property>
+  </widget>
+  <widget class="Line" name="line_7">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>320</y>
+     <width>271</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Sunken</enum>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
    </property>
   </widget>
  </widget>

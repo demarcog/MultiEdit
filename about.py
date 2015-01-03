@@ -2,8 +2,8 @@
 
 # Form implementation generated from reading ui file 'about.ui'
 #
-# Created: Mon Jul 22 18:25:49 2013
-#      by: PyQt4 UI code generator 4.10
+# Created: Sat Jan  3 12:03:14 2015
+#      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -44,7 +44,7 @@ class Ui_About(object):
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName(_fromUtf8("label"))
         self.textBrowser = QtGui.QTextBrowser(About)
-        self.textBrowser.setGeometry(QtCore.QRect(20, 100, 761, 141))
+        self.textBrowser.setGeometry(QtCore.QRect(20, 100, 761, 151))
         self.textBrowser.setObjectName(_fromUtf8("textBrowser"))
         self.label_2 = QtGui.QLabel(About)
         self.label_2.setGeometry(QtCore.QRect(240, 10, 51, 51))
@@ -63,20 +63,20 @@ class Ui_About(object):
 
     def retranslateUi(self, About):
         About.setWindowTitle(_translate("About", "Dialog", None))
-        self.label_3.setText(_translate("About", "MultiEdit v 0.5", None))
-        self.label.setText(_translate("About", "(c) 2013 Giuseppe De Marco\n"
+        self.label_3.setText(_translate("About", "MultiEdit v 1.0", None))
+        self.label.setText(_translate("About", "(c) 2015 Giuseppe De Marco\n"
 " Pienocampo\n"
 " www.pienocampo.it", None))
         self.textBrowser.setHtml(_translate("About", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'Ubuntu\'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">MultiEdit v. 0.5 August 2013 release</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Major update for Qgis 1.9 master release and API changes.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">MultiEdit v. 1.0 January 2015 release</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Major updates for Qgis 2.6 release and API changes. Added function to select all features and change values for all by the new Select all pushbutton. </p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">This plugins\' new releases are currently ongoing.</p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Tips and suggestions from anyone who uses it are always welcome!</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">For instruction and examples valid for version 0.4 and 0.5 you can visit http://www.pienocampo.it/pyqgis/multiedit_help.html or read below!</p></body></html>", None))
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">For instruction and examples valid for version 0.4 and 0.5 you can visit http://www.pienocampo.it/pyqgis/multiedit_help.html.</p></body></html>", None))
 
 from PyQt4 import QtWebKit
-#import resources_rc
+import resources_rc
