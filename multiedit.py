@@ -9,7 +9,7 @@
  newly created from plugin gui...
                               -------------------
         begin                : 2012-03-09
-        copyright            : (C) 2012-2013 by Giuseppe De Marco
+        copyright            : (C) 2012-2015 by Giuseppe De Marco
         email                : info@pienocampo.it
  ***************************************************************************/
 
@@ -81,15 +81,19 @@ class MultiEdit:
 
  #choose layer to process
     def chooselayer(self):
+        layerlist=[]
+        slist=[]
         self.dlg.ui.chosenlayer.clear()
         self.dlg.ui.txtFeedBack.clear()
-        self.dlg.ui.newvalue.clear()
-        for name, layer in QgsMapLayerRegistry.instance().mapLayers().iteritems():
-            if layer.type() == QgsMapLayer.VectorLayer:
+        #self.dlg.ui.newvalue.clear()
+        layers = self.iface.legendInterface().layers()
+        for layer in layers:
+            layerType = layer.type()
+            if layerType == QgsMapLayer.VectorLayer:
                 self.dlg.ui.chosenlayer.addItem(layer.name())
-                #update other comboboxes
-                self.set_select_attributes()
-                self.set_unique_value()
+        #update other comboboxes
+        self.set_select_attributes()
+        self.set_unique_value()
 
  #choose attribute of present layers 
     def set_select_attributes(self):
@@ -100,8 +104,6 @@ class MultiEdit:
             layername = self.dlg.ui.chosenlayer.currentText()
             for name, selectlayer in QgsMapLayerRegistry.instance().mapLayers().iteritems():
                 if selectlayer.name() == layername:
-                    #removed for API 2 compatibility removing counter and iteritems()
-                    #for index, field in selectlayer.dataProvider().fields().iteritems():
                     for field in selectlayer.dataProvider().fields():
                         self.dlg.ui.Column.addItem(field.name())
                         self.dlg.ui.new_field.addItem(field.name())
@@ -132,25 +134,20 @@ class MultiEdit:
             if selectlayer.name() == layername:
                 provider = selectlayer.dataProvider()
                 #select field and fetch values
-                #removed for API 2 compatibility for index, field in provider.fields().iteritems():
                 for field in provider.fields():
                     if field.name() == column:
                         request = QgsFeatureRequest().setSubsetOfAttributes()
                         for f in selectlayer.getFeatures():
                             attrs = f.attributes()
-                            #remove k and iteritems for api 2.0
-                            #for (k,attr) in attrs.iteritems():
                             for attr in attrs:
                                 if attr != None:
                                     self.dlg.ui.oldattribute.addItem(attr)
-                                #output += "\n" + attr.toString()
-                                #self.dlg.ui.txtFeedBack.setText(output)
+
  
  #find unique values in layer feature classification 
     def set_unique_value(self):
         #pyqtRemoveInputHook()
         #pdb.set_trace()
-        #uniqueprovider = None
         self.dlg.ui.oldattribute.clear()
         uniquelayer = self.dlg.ui.chosenlayer.currentText()
         uniquecolumn = self.dlg.ui.Column.currentText()
@@ -192,21 +189,12 @@ class MultiEdit:
                 if cLayer:
                     for field in fields:
                         if field.name() == currcolumn:
-                            #version 0.5--correction-----------------------------
-                            #index = fields.indexFromName(field.name())
-                            #select field index--------correction from ver. 0.3
-                            #idx = []
-                            #idx.append(index)
-                            #provider.select(idx)
-                            #-------------------------correction from ver. 0.3
-                            #version 0.5 correction------------------------------
-                            #----------------------------------------------------
                             #navigates through the features and select those whose name
                             #corresponds to the value in combo box
                             for f in cLayer.getFeatures():
                                 attrs = f.attributes()
                                 for attr in attrs:
-                                    if unicode(attr) == currfeature:#modified to check string instead of number 0.5
+                                    if unicode(attr) == currfeature:#check string instead of number
                                         self.selectList.append(f.id())
         # make the actual selection
         if self.selectList:
@@ -216,7 +204,7 @@ class MultiEdit:
         #some info in the text browser to know what's going on
         self.dlg.ui.txtFeedBack.setText(unicode(nsel)+" Feature/s selected"+"\nin Layer--> " + cLayer.name() + "\nin Field--> " + currcolumn + "\nValue to be modified--> " + currfeature)
  
-    def change_to_any(self):#change values to any column of the attribute table
+    def change_to_any(self):#change values to any fields at the corresponding row attribute
         self.countchange = 0
         layername = self.dlg.ui.chosenlayer.currentText()
         val = self.get_new_value()
@@ -241,12 +229,12 @@ class MultiEdit:
                     if field.name() == col_new:
                         ncol_new = fields.indexFromName(field.name())
                 #some information in the textBrowser
-                self.dlg.ui.txtFeedBack.setText("Field name: " + col_new + " - Field ID " + unicode(ncol_new) + "\nNumber of Features to modify--> "+ unicode(nF))
+                self.dlg.ui.txtFeedBack.setText("Field name: " + col_new + " - Field ID " + unicode(ncol_new) + "\nNumber of Features to modify--> "+ unicode(nF) +"\nValue to be written--> "+ unicode(val))
                 if nF >0:
                     fields = layer.dataProvider().fields()
                     for field in fields:
                         if field.name() == col_new:
-                            #function to write to all columns
+                            #write the value to all the rows in a field 
                             if self.selectall > 0:
                                 idx = fields.indexFromName(field.name())#retrieve field index from name
                                 for f in layer.getFeatures():
@@ -260,7 +248,8 @@ class MultiEdit:
                                 for f in layer.getFeatures():
                                     attrs = f.attributes()
                                     for attr in attrs:
-                                        if unicode(attr) == currfeature:#convert anything to string to match unique values 0.5
+                                        #write the value to only matching old attribute value of a field 
+                                        if unicode(attr) == currfeature:#convert anything to unicode string to match unique values 0.5
                                             feat = f.id()
                                             layer.changeAttributeValue(feat, idx ,val)
                                             self.countchange+=1
@@ -277,16 +266,15 @@ class MultiEdit:
     def check_unique_fields(self, fields, newfieldname):
         for i in fields:
             confront = fields[i].name()
-            self.dlg.ui.txtFeedBack.append("Checking field:  "+unicode(confront))
+            self.dlg.ui.txtFeedBack.append("Searching fields for:  "+unicode(confront))
             if confront == newfieldname:
                 unique = 1
             else:
                 unique = 0
         return unique
 
- #create new field in layer table
-    
     def create_new_field(self):
+        #create new field in layer table
         #pyqtRemoveInputHook()
         #pdb.set_trace()
         layername = self.dlg.ui.chosenlayer.currentText()
@@ -297,42 +285,37 @@ class MultiEdit:
                 provider = layer.dataProvider()
                 fields = provider.fields()
                 nF = fields.count()
-                self.dlg.ui.txtFeedBack.append(unicode(nF)+"   found in layer.")
+                self.dlg.ui.txtFeedBack.append(unicode(nF)+" fields found in layer.")
+                #used to start from 0
                 newfieldID=nF-1
                 newfieldui = self.dlg.ui.newfield.text()
                 if newfieldui == (""):
                     QMessageBox.critical(None,"MutiEdit","Please provide a non null field name")
                     return
                 else:
-                    #newfieldname = QString(self.get_field())
                     newfieldname = self.get_field()
                     unique = 0 
-                    #self.dlg.ui.txtFeedBack.append(newfieldname)
                     for field in fields:
                         confront = field.name()
-                        self.dlg.ui.txtFeedBack.append("Checking field:  "+unicode(confront))
+                        self.dlg.ui.txtFeedBack.append("Searching fields names for:  "+unicode(confront))
                         if confront == newfieldname:
                             unique = 1
-                    self.dlg.ui.txtFeedBack.append(unicode(unique))
                     if unique == 1:
                         QMessageBox.information(None, "MultiEdit","Field name already present in layer, provide another name...")
                         return
                     else:
                         layer.startEditing()
-                        #   newfieldname = QString(newfieldui)
-                        
                         newfieldtype = self.dlg.ui.fieldtype.currentText()
-                        self.dlg.ui.txtFeedBack.append("New Field  "+unicode(newfieldname)+" , Field Type  "+unicode(newfieldtype))
+                        self.dlg.ui.txtFeedBack.append("Creating new field: "+unicode(newfieldname)+" , Type  "+unicode(newfieldtype))
                         if newfieldtype == "Int":
                             provider.addAttributes ([QgsField(newfieldname,QVariant.Int,"Integer",10,0)])
                         if newfieldtype == "String":
                             provider.addAttributes ([QgsField(newfieldname,QVariant.String,"String",255,0)])
                         if newfieldtype == "Double":
                             provider.addAttributes ([QgsField(newfieldname,QVariant.Double, "Real", 32,2)])
-                    
                 layer.commitChanges()
                 layer.reload()
-                self.dlg.ui.newfield.clear()
+                #self.dlg.ui.newfield.clear()
         return
 
  #Clear selected vector features 
@@ -383,13 +366,8 @@ class MultiEdit:
     def exit(self):
         #pyqtRemoveInputHook()
         #pdb.set_trace()
-        #put rest of the code here
         self.clearselection()
-
-        #----version 0.4 
-        #disconnect QT objects to avoid strange behaviours in create new field function
-        #after exiting and reloading the plugin
-        QObject.disconnect(self.dlg.ui.chosenlayer, SIGNAL("currentIndexChanged(QString)"), self.clearselection)
+        #disconnect QT objects 
         QObject.disconnect(self.dlg.ui.chosenlayer, SIGNAL("currentIndexChanged(QString)"), self.clearselection)
         QObject.disconnect(self.dlg.ui.create_new_field, SIGNAL("clicked(bool)"), self.newfield_connect)
         QObject.disconnect(self.dlg.ui.select, SIGNAL("clicked(bool)"), self.select_features)
@@ -400,17 +378,10 @@ class MultiEdit:
         QObject.disconnect(self.dlg.ui.change_another, SIGNAL("clicked(bool)"), self.change_to_any)
         QObject.disconnect(self.dlg.ui.Exit, SIGNAL("clicked(bool)"), self.exit)
         QObject.disconnect(self.dlg.ui.about, SIGNAL("clicked(bool)"), self.doabout )
-        #-----version 0.4 end    
-        
-        #turn on layers turned off by turn_layer_off f(x) stored in a list
-        #globally defined called turnedoffLayers, this method preserves the list, if one needs to purge items
-        #one should use this, given a the list: while a: function(a.pop)
-        #while self.turnedoffLayers:
-        #   self.turn_layer_on(self.turnedoffLayers.pop)
+        #turn on layers turned off by turn_layer_off
         self.restore_visibility()
         if (self.saved == False and self.countchange > 0):
-            QMessageBox.information(None,"INFO","Remember to review the changes \n and then save the edits. Thank you")
-        #self.iface.zoomToPrevious()
+            self.iface.messageBar().pushMessage("MultiEdit","Remember to review the changes and then save the edits. Thank you", level=QgsMessageBar.INFO)
         return
 
     def save_edits(self):
@@ -426,6 +397,7 @@ class MultiEdit:
                     #show result in textBrowser
                     self.dlg.ui.txtFeedBack.setText("Edits saved in Layer--> "+ layername)
                     self.saved = True
+                    #check for unsaved layers set to 0...
                     self.countchange = 0
         #update comboboxes
         self.set_unique_value()
@@ -439,21 +411,18 @@ class MultiEdit:
 
     def doabout(self):
         self.dlga.show()
-        
-    
-                
 
 #Custom function end-------------------------------------------------------------------------------------------------------------------
 
-    def unload(self):
+    def unload(self):#to remove <2.0 compatibility!!!
         #compatibility with 2.0 menu
-        # check if Raster/Vector menu available and remove our buttons from appropriate
+        # check if Raster/Vector menu is available and remove buttons from appropriate
         # menu and toolbar
         if hasattr(self.iface, "addPluginToVectorMenu"):
-            self.iface.removePluginVectorMenu("&MultiEdit",self.action)
+            self.iface.removePluginVectorMenu("&Pienocampo",self.action)
             self.iface.removeVectorToolBarIcon(self.action)
         else:
-            self.iface.removePluginMenu("&MultiEdit",self.action)
+            self.iface.removePluginMenu("&Pienocampo",self.action)
             self.iface.removeToolBarIcon(self.action)
             
             
@@ -464,13 +433,13 @@ class MultiEdit:
         self.countchange = 0
         self.turnedoffLayers = []
         self.saved = None
+        self.selectall = 0
         check = 0
         check = self.checkvector()
         if check == 0:
             self.iface.messageBar().pushMessage("MultiEdit","No vector layers \n Please load some, then reload plugin", level=QgsMessageBar.CRITICAL, duration=3)
             return
         else:
-
             boolvar ="YES"
             #Initial comboboxes filling
             self.chooselayer()
@@ -506,8 +475,6 @@ class MultiEdit:
             self.dlg.ui.txtFeedBack.append("Saved layers? -->"+unicode(self.saved))
             self.dlg.ui.txtFeedBack.append("Turned off layer by MultiEdit"+unicode(self.turnedoffLayers))
             QObject.connect(self.dlg.ui.Exit, SIGNAL("clicked(bool)"), self.exit)
-            #----ver 0.4
+            #----About dialog
             QObject.connect(self.dlg.ui.about, SIGNAL("clicked(bool)"), self.doabout )
-            #----ver 0.4 end
-            
 

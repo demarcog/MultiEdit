@@ -79,4 +79,3 @@ class Ui_About(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">For instruction and examples valid for version 0.4 and 0.5 you can visit http://www.pienocampo.it/pyqgis/multiedit_help.html.</p></body></html>", None))
 
 from PyQt4 import QtWebKit
-import resources_rc

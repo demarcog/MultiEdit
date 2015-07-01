@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui_multiedit.ui'
 #
-# Created: Sat Jan  3 10:43:12 2015
+# Created: Sat Jan  3 14:22:42 2015
 #      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -32,18 +32,21 @@ class Ui_MultiEdit(object):
         MultiEdit.setFont(font)
         self.chosenlayer = QtGui.QComboBox(MultiEdit)
         self.chosenlayer.setGeometry(QtCore.QRect(10, 80, 261, 27))
+        self.chosenlayer.setInsertPolicy(QtGui.QComboBox.InsertAlphabetically)
         self.chosenlayer.setObjectName(_fromUtf8("chosenlayer"))
         self.label = QtGui.QLabel(MultiEdit)
         self.label.setGeometry(QtCore.QRect(20, 60, 67, 17))
         self.label.setObjectName(_fromUtf8("label"))
         self.Column = QtGui.QComboBox(MultiEdit)
         self.Column.setGeometry(QtCore.QRect(10, 139, 261, 27))
+        self.Column.setInsertPolicy(QtGui.QComboBox.InsertAlphabetically)
         self.Column.setObjectName(_fromUtf8("Column"))
         self.label_2 = QtGui.QLabel(MultiEdit)
         self.label_2.setGeometry(QtCore.QRect(20, 119, 67, 17))
         self.label_2.setObjectName(_fromUtf8("label_2"))
         self.oldattribute = QtGui.QComboBox(MultiEdit)
         self.oldattribute.setGeometry(QtCore.QRect(10, 200, 261, 27))
+        self.oldattribute.setInsertPolicy(QtGui.QComboBox.InsertAlphabetically)
         self.oldattribute.setObjectName(_fromUtf8("oldattribute"))
         self.label_3 = QtGui.QLabel(MultiEdit)
         self.label_3.setGeometry(QtCore.QRect(20, 180, 141, 17))
@@ -75,6 +78,7 @@ class Ui_MultiEdit(object):
         self.change_another.setObjectName(_fromUtf8("change_another"))
         self.new_field = QtGui.QComboBox(MultiEdit)
         self.new_field.setGeometry(QtCore.QRect(293, 80, 261, 27))
+        self.new_field.setInsertPolicy(QtGui.QComboBox.InsertAlphabetically)
         self.new_field.setObjectName(_fromUtf8("new_field"))
         self.label_6 = QtGui.QLabel(MultiEdit)
         self.label_6.setGeometry(QtCore.QRect(293, 59, 261, 17))
@@ -186,4 +190,4 @@ class Ui_MultiEdit(object):
         self.about.setText(_translate("MultiEdit", "About/Help", None))
         self.all.setText(_translate("MultiEdit", "Select All", None))
 
-import resources_rc
+

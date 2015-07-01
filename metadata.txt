@@ -8,16 +8,16 @@
 [general]
 name=MultiEdit
 description=MultiEdit chooses an attribute value from a vector layer and selecting the matching features, changes all the corresponding to a new value: useful if you have many features to modify.This plugin lets you write the new value in any existing field in the attribute table, for the selected features or newly created from plugin gui...
-version=0.5
+version=1.0
 qgisMinimumVersion=2.0
 class_name=MultiEdit
-homepage=http://www.pienocampo.it/pyqgis/plugins.xml
+homepage=http://www.pienocampo.it/pyqgis2/plugins.xml
 tracker=https://hub.qgis.org/projects/demarcog1/issues
 repository=https://github.com/demarcog/MultiEdit.git
 icon=multiedit.png
 
 ; experimental flag
-experimental=True
+experimental=false
 
 [author]
 name=Giuseppe De Marco

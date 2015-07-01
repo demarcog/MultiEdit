@@ -1,3 +1,7 @@
+1.0
+MultiEdit v. 1.0 2015 release
+Major updates for Qgis 2.6 (or higher) release and API changes. Added function to select all features and change values for all by the new Select all pushbutton. 
+
 0.5
 Major changes in function to meet new API
 Major changes in plugin loading to match new menu/toolbar specs of Qgis >=1.9
