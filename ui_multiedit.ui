@@ -18,19 +18,6 @@
   <property name="windowTitle">
    <string>MultiEdit</string>
   </property>
-  <widget class="QComboBox" name="chosenlayer">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>80</y>
-     <width>261</width>
-     <height>27</height>
-    </rect>
-   </property>
-   <property name="insertPolicy">
-    <enum>QComboBox::InsertAlphabetically</enum>
-   </property>
-  </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
@@ -42,19 +29,6 @@
    </property>
    <property name="text">
     <string>Layer</string>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="Column">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>139</y>
-     <width>261</width>
-     <height>27</height>
-    </rect>
-   </property>
-   <property name="insertPolicy">
-    <enum>QComboBox::InsertAlphabetically</enum>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
@@ -138,16 +112,15 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>60</x>
+     <x>0</x>
      <y>0</y>
-     <width>681</width>
-     <height>51</height>
+     <width>351</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
-    <string>MultiEdit 1.0  
-(C) 2015 by Giuseppe De Marco
- www.pienocampo.it</string>
+    <string>MultiEdit 1.1  (C) 2018 by Giuseppe De Marco   
+www.d2gis.com</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -193,19 +166,6 @@ Features</string>
    <property name="text">
     <string>Write value 
  to chosen field</string>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="new_field">
-   <property name="geometry">
-    <rect>
-     <x>293</x>
-     <y>80</y>
-     <width>261</width>
-     <height>27</height>
-    </rect>
-   </property>
-   <property name="insertPolicy">
-    <enum>QComboBox::InsertAlphabetically</enum>
    </property>
   </widget>
   <widget class="QLabel" name="label_6">
@@ -377,10 +337,10 @@ of selected Layer</string>
   <widget class="QLabel" name="label_12">
    <property name="geometry">
     <rect>
-     <x>220</x>
+     <x>350</x>
      <y>10</y>
      <width>51</width>
-     <height>51</height>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
@@ -474,7 +434,102 @@ of selected Layer</string>
     <enum>Qt::Horizontal</enum>
    </property>
   </widget>
+  <widget class="QLabel" name="label_9">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>20</y>
+     <width>131</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="resources.qrc">:/plugins/MultiEdit/d2gis.com.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QgsMapLayerComboBox" name="chosenlayer">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>60</y>
+     <width>211</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QgsFieldComboBox" name="Column">
+   <property name="geometry">
+    <rect>
+     <x>69</x>
+     <y>110</y>
+     <width>211</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QgsFieldComboBox" name="new_field">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>80</y>
+     <width>241</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <zorder>label</zorder>
+  <zorder>label_2</zorder>
+  <zorder>oldattribute</zorder>
+  <zorder>label_3</zorder>
+  <zorder>label_4</zorder>
+  <zorder>txtFeedBack</zorder>
+  <zorder>line</zorder>
+  <zorder>select</zorder>
+  <zorder>unselect</zorder>
+  <zorder>change_another</zorder>
+  <zorder>label_6</zorder>
+  <zorder>label_7</zorder>
+  <zorder>Exit</zorder>
+  <zorder>save</zorder>
+  <zorder>show_t</zorder>
+  <zorder>fieldtype</zorder>
+  <zorder>create_new_field</zorder>
+  <zorder>line_6</zorder>
+  <zorder>label_8</zorder>
+  <zorder>label_10</zorder>
+  <zorder>newvalue</zorder>
+  <zorder>newfield</zorder>
+  <zorder>label_12</zorder>
+  <zorder>line_3</zorder>
+  <zorder>line_2</zorder>
+  <zorder>line_4</zorder>
+  <zorder>about</zorder>
+  <zorder>all</zorder>
+  <zorder>line_7</zorder>
+  <zorder>label_9</zorder>
+  <zorder>label_5</zorder>
+  <zorder>chosenlayer</zorder>
+  <zorder>Column</zorder>
+  <zorder>new_field</zorder>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QgsFieldComboBox</class>
+   <extends>QComboBox</extends>
+   <header>qgsfieldcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QgsMapLayerComboBox</class>
+   <extends>QComboBox</extends>
+   <header>qgsmaplayercombobox.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="resources.qrc"/>
   <include location="resources.qrc"/>

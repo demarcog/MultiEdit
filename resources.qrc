@@ -1,6 +1,7 @@
 <RCC>
-    <qresource prefix="/plugins/MultiEdit" >
+    <qresource prefix="/plugins/MultiEdit">
         <file>multiedit.png</file>
-	<file>pienocampo.png</file>
+        <file>pienocampo.png</file>
+        <file>d2gis.com.png</file>
     </qresource>
 </RCC>
