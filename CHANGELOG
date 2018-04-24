@@ -1,3 +1,6 @@
+1.1
+MultiEdit v. 1.1 2018 release
+Major updates to match python3 and PyQT5 for QGis new 3.x realeases. Use of QgsComboBox custom widgets for layers and fields parsing, code cleanup and simplified functions. 
 1.0
 MultiEdit v. 1.0 2015 release
 Major updates for Qgis 2.6 (or higher) release and API changes. Added function to select all features and change values for all by the new Select all pushbutton. 
