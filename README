@@ -1,0 +1,10 @@
+MultiEdit is a plugin originally created for version 1.8 of Qgis. 
+This plugin let the user choose an attribute value from a vector layer and selecting the matching features, 
+allows the user change all the corresponding to a new value.
+It is particurarly useful if you have many features to modify assigning the same value or if you have the necessity 
+to write the same value to a new field in the table of attributes of your vector layer wherever there's a matching feature 
+to your criterion: this plugin lets you write the new value in any existing field in the attribute table, 
+for the selected features or in any other newly created fields directly from the plugin gui.
+This branch is intended to be the future developing ground and at the moment is compatible with 3.x version of Qgis.
+
+Giuseppe De Marco
