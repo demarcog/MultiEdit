@@ -323,10 +323,10 @@ class MultiEdit(object):
                             provider.addAttributes ([QgsField(newfieldname,QVariant.String)])
                         if newfieldtype == "Double":
                             provider.addAttributes ([QgsField(newfieldname,QVariant.Double)])
-                layer.updateFields()
-                layer.commitChanges()
-                layer.reload()
-                #self.dlg.ui.newfield.clear()
+                        layer.updateFields()
+                        layer.commitChanges()
+                        layer.reload()
+                        #self.dlg.ui.newfield.clear()
         return
 
  #Clear selected vector features 
