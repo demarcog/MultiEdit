@@ -5,7 +5,7 @@
 # Created by: PyQt5 UI code generator 5.5.1
 #
 # WARNING! All changes made in this file will be lost!
-from builtins import object
+
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_MultiEdit(object):
@@ -133,9 +133,11 @@ class Ui_MultiEdit(object):
         self.label_9.setObjectName("label_9")
         self.chosenlayer = QgsMapLayerComboBox(MultiEdit)
         self.chosenlayer.setGeometry(QtCore.QRect(70, 60, 211, 31))
+        self.chosenlayer.setInsertPolicy(QtWidgets.QComboBox.InsertAlphabetically)
         self.chosenlayer.setObjectName("chosenlayer")
         self.Column = QgsFieldComboBox(MultiEdit)
         self.Column.setGeometry(QtCore.QRect(69, 110, 211, 31))
+        self.Column.setInsertPolicy(QtWidgets.QComboBox.InsertAlphabetically)
         self.Column.setObjectName("Column")
         self.new_field = QgsFieldComboBox(MultiEdit)
         self.new_field.setGeometry(QtCore.QRect(290, 80, 241, 27))
@@ -211,5 +213,4 @@ class Ui_MultiEdit(object):
 
 from qgis.gui import QgsFieldComboBox
 from qgis.gui import QgsMapLayerComboBox
-
 import resources_rc

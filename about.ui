@@ -101,7 +101,7 @@ p, li { white-space: pre-wrap; }
   <widget class="QWebView" name="webView">
    <property name="geometry">
     <rect>
-     <x>0</x>
+     <x>10</x>
      <y>250</y>
      <width>771</width>
      <height>271</height>
@@ -109,7 +109,7 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="url">
     <url>
-     <string>http://www.pienocampo.it/pyqgis/multiedit_help.html</string>
+     <string>qrc:/plugins/MultiEdit/singlehtml/singlehtml/index.html</string>
     </url>
    </property>
    <property name="zoomFactor">
@@ -126,7 +126,7 @@ p, li { white-space: pre-wrap; }
  </customwidgets>
  <resources>
   <include location="resources.qrc"/>
-  <include location="../../qgis_plugins/MultiEdit/resources.qrc"/>
+  <include location="resources.qrc"/>
  </resources>
  <connections/>
 </ui>

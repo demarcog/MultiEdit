@@ -4,4 +4,38 @@
         <file>pienocampo.png</file>
         <file>d2gis.com.png</file>
     </qresource>
+    <qresource prefix="/plugins/MultiEdit/singlehtml">
+        <file>singlehtml/_static/ajax-loader.gif</file>
+        <file>singlehtml/_static/basic.css</file>
+        <file>singlehtml/_static/classic.css</file>
+        <file>singlehtml/_static/comment-bright.png</file>
+        <file>singlehtml/_static/comment-close.png</file>
+        <file>singlehtml/_static/comment.png</file>
+        <file>singlehtml/_static/default.css</file>
+        <file>singlehtml/_static/doctools.js</file>
+        <file>singlehtml/_static/down-pressed.png</file>
+        <file>singlehtml/_static/down.png</file>
+        <file>singlehtml/_static/file.png</file>
+        <file>singlehtml/_static/jquery.js</file>
+        <file>singlehtml/_static/minus.png</file>
+        <file>singlehtml/_static/plus.png</file>
+        <file>singlehtml/_static/pygments.css</file>
+        <file>singlehtml/_static/searchtools.js</file>
+        <file>singlehtml/_static/sidebar.js</file>
+        <file>singlehtml/_static/underscore.js</file>
+        <file>singlehtml/_static/up-pressed.png</file>
+        <file>singlehtml/_static/up.png</file>
+        <file>singlehtml/_static/websupport.js</file>
+        <file>singlehtml/_images/icon.png</file>
+        <file>singlehtml/_images/Multiedit1.png</file>
+        <file>singlehtml/_images/Multiedit2.png</file>
+        <file>singlehtml/_images/Multiedit3.png</file>
+        <file>singlehtml/_images/Multiedit4.png</file>
+        <file>singlehtml/_images/Multiedit5.png</file>
+        <file>singlehtml/_images/Multiedit6.png</file>
+        <file>singlehtml/_images/Multiedit7.png</file>
+        <file>singlehtml/_images/Multiedit8.png</file>
+        <file>singlehtml/index.html</file>
+        <file>singlehtml/objects.inv</file>
+    </qresource>
 </RCC>

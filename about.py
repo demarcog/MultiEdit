@@ -1,4 +1,3 @@
-from builtins import object
 # -*- coding: utf-8 -*-
 
 # Form implementation generated from reading ui file 'about.ui'
@@ -39,8 +38,8 @@ class Ui_About(object):
         self.label_2.setScaledContents(True)
         self.label_2.setObjectName("label_2")
         self.webView = QtWebKitWidgets.QWebView(About)
-        self.webView.setGeometry(QtCore.QRect(0, 250, 771, 271))
-        self.webView.setUrl(QtCore.QUrl("http://www.pienocampo.it/pyqgis/multiedit_help.html"))
+        self.webView.setGeometry(QtCore.QRect(10, 250, 771, 271))
+        self.webView.setUrl(QtCore.QUrl("qrc:/plugins/MultiEdit/singlehtml/singlehtml/index.html"))
         self.webView.setZoomFactor(0.699999988079071)
         self.webView.setObjectName("webView")
 
