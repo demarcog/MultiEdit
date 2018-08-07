@@ -1,8 +1,8 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 
 # Form implementation generated from reading ui file 'ui_multiedit.ui'
 #
-# Created by: PyQt5 UI code generator 5.5.1
+# Created by: PyQt5 UI code generator 5.9
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -16,10 +16,10 @@ class Ui_MultiEdit(object):
         font.setFamily("Verdana")
         MultiEdit.setFont(font)
         self.label = QtWidgets.QLabel(MultiEdit)
-        self.label.setGeometry(QtCore.QRect(20, 60, 67, 17))
+        self.label.setGeometry(QtCore.QRect(10, 77, 41, 17))
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(MultiEdit)
-        self.label_2.setGeometry(QtCore.QRect(20, 119, 67, 17))
+        self.label_2.setGeometry(QtCore.QRect(10, 137, 31, 17))
         self.label_2.setObjectName("label_2")
         self.oldattribute = QtWidgets.QComboBox(MultiEdit)
         self.oldattribute.setGeometry(QtCore.QRect(10, 200, 261, 27))
@@ -132,15 +132,15 @@ class Ui_MultiEdit(object):
         self.label_9.setScaledContents(True)
         self.label_9.setObjectName("label_9")
         self.chosenlayer = QgsMapLayerComboBox(MultiEdit)
-        self.chosenlayer.setGeometry(QtCore.QRect(70, 60, 211, 31))
+        self.chosenlayer.setGeometry(QtCore.QRect(50, 77, 221, 31))
         self.chosenlayer.setInsertPolicy(QtWidgets.QComboBox.InsertAlphabetically)
         self.chosenlayer.setObjectName("chosenlayer")
         self.Column = QgsFieldComboBox(MultiEdit)
-        self.Column.setGeometry(QtCore.QRect(69, 110, 211, 31))
+        self.Column.setGeometry(QtCore.QRect(49, 127, 221, 31))
         self.Column.setInsertPolicy(QtWidgets.QComboBox.InsertAlphabetically)
         self.Column.setObjectName("Column")
         self.new_field = QgsFieldComboBox(MultiEdit)
-        self.new_field.setGeometry(QtCore.QRect(290, 80, 241, 27))
+        self.new_field.setGeometry(QtCore.QRect(290, 80, 261, 27))
         self.new_field.setObjectName("new_field")
         self.label.raise_()
         self.label_2.raise_()
@@ -211,6 +211,5 @@ class Ui_MultiEdit(object):
         self.about.setText(_translate("MultiEdit", "About/Help"))
         self.all.setText(_translate("MultiEdit", "Select All"))
 
-from qgis.gui import QgsFieldComboBox
-from qgis.gui import QgsMapLayerComboBox
-import resources_rc
+from qgsfieldcombobox import QgsFieldComboBox
+from qgsmaplayercombobox import QgsMapLayerComboBox

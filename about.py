@@ -63,4 +63,4 @@ class Ui_About(object):
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
 
 from PyQt5 import QtWebKitWidgets
-import resources_rc
+#import resources_rc

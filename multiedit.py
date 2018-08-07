@@ -32,7 +32,7 @@ from qgis.PyQt.QtGui import *
 from qgis.PyQt.QtWidgets import *
 from qgis.PyQt.QtXml import *
 from qgis.core import *
-import pdb
+
 # Initialize Qt resources from file resources.py
 from . import resources
 # Import the code for the dialog
@@ -56,22 +56,38 @@ class MultiEdit(object):
         self.saved = False
         self.countchange = 0
         self.selectall = 0
-        
+
     def initGui(self):
         # Create action that will start plugin configuration
-        self.action = QAction(QIcon(":/plugins/MultiEdit/multiedit.png"),u"MultiEdit", self.iface.mainWindow())
+        self.action = QAction(QIcon(":/plugins/MultiEdit/multiedit.png"), \
+            "MultiEdit", self.iface.mainWindow())
         # connect the action to the run method
         self.action.triggered.connect(self.run)
-        #compatibility with 2.0 menu
-        # check if Raster/Vector menu available
-        if hasattr(self.iface, "addPluginToVectorMenu"):
-            # Raster menu and toolbar available
-            self.iface.addPluginToVectorMenu("&Pienocampo", self.action)
-            self.iface.addVectorToolBarIcon(self.action)
-        else:
-            # there is no Raster/Vector menu, place plugin under Plugins menu as usual
-            self.iface.addToolBarIcon(self.action)
-            self.iface.addPluginToMenu("&Pienocampo", self.action)
+        
+        # Add toolbar button and menu item
+        self.iface.addToolBarIcon(self.action)
+        self.iface.addPluginToVectorMenu("&d2gis", self.action)
+
+    def unload(self):
+        # Remove the plugin menu item and icon
+        self.iface.removePluginMenu("&d2gis",self.action)
+        self.iface.removeToolBarIcon(self.action)
+                
+    ## def initGui(self):
+        ## # Create action that will start plugin configuration
+        ## self.action = QAction(QIcon(":/plugins/MultiEdit/multiedit.png"),u"MultiEdit", self.iface.mainWindow())
+        ## # connect the action to the run method
+        ## self.action.triggered.connect(self.run)
+        ## #compatibility with 2.0 menu
+        ## # check if Raster/Vector menu available
+        ## if hasattr(self.iface, "addPluginToVectorMenu"):
+            ## # Raster menu and toolbar available
+            ## self.iface.addPluginToVectorMenu("&D2GIS", self.action)
+            ## self.iface.addVectorToolBarIcon(self.action)
+        ## else:
+            ## # there is no Raster/Vector menu, place plugin under Plugins menu as usual
+            ## self.iface.addToolBarIcon(self.action)
+            ## self.iface.addPluginToMenu("&D2GIS", self.action)
                     
                 
 #Custom functions begin-------------------------------------------------------
@@ -407,15 +423,15 @@ class MultiEdit(object):
 
 #Custom function end-------------------------------------------------------------------------------------------------------------------
 
-    def unload(self):
-        # check if Raster/Vector menu is available and remove buttons from appropriate
-        # menu and toolbar
-        if hasattr(self.iface, "addPluginToVectorMenu"):
-            self.iface.removePluginVectorMenu("&D2GIS",self.action)
-            self.iface.removeVectorToolBarIcon(self.action)
-        else:
-            self.iface.removePluginMenu("&D2GIS",self.action)
-            self.iface.removeToolBarIcon(self.action)
+    ## def unload(self):
+        ## # check if Raster/Vector menu is available and remove buttons from appropriate
+        ## # menu and toolbar
+        ## if hasattr(self.iface, "addPluginToVectorMenu"):
+            ## self.iface.removePluginVectorMenu("&D2GIS",self.action)
+            ## self.iface.removeVectorToolBarIcon(self.action)
+        ## else:
+            ## self.iface.removePluginMenu("&D2GIS",self.action)
+            ## self.iface.removeToolBarIcon(self.action)
             
             
 # run method that performs all the real work----------------------------------------------------------------------
